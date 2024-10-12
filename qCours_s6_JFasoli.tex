@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[french]{babel} 
+
+\begin{document}
+
+\title{Question de cours n°6 de Physique Numérique}
+\author{J. Fasoli - Magistère de Physique}
+
+\maketitle
+
+\section{Equation de base}
+
+L'équation de Klein-Gordon est donnée par :
+
+$$
+\frac{\partial^2 u}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2 u}{\partial t^2} + \lambda^2 u^2 = 0
+$$
+
+\section{Discrétisation}
+
+L'équation discrétisée est :
+
+$$
+\frac{u_{j+1}^{n} - 2u_{j}^{n} + u_{j-1}^{n}}{(\Delta x)^2} - \frac{1}{c^2}  \frac{u_{j}^{n+1} - 2u_{j}^{n} + u_{j}^{n-1}}{(\Delta t)^2} + \lambda^2 (u_{j}^{n})^2 = 0
+$$
+
+
+En isolant $u_{j}^{n+1}$, on obtient :
+$$
+u_{j}^{n+1} = 2u_{j}^{n} - u_{j}^{n-1} + (c\frac{\Delta t}{\Delta x})^2 (u_{j+1}^{n} - 2u_{j}^{n} + u_{j-1}^{n}) + (\lambda c \Delta t)^2 (u_{j}^{n})^2
+$$
+
+\end{document}
